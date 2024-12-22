@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fight club</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <div class="health-bar">
+        <!--Player 1-->
+        <div class="player">
+          <div class="image-box player-avater" ></div>
+          <div class="overlay">
+            <div class="border">
+              <div class="health"></div>
+              <div id="player1-health" class="default-health"></div>
+            </div>
+            <div class="player-info">
+              <h2>Ryan</h2>
+              <p>Shinobi</p>
+            </div>
+          </div>
+        </div>
+        <!--Player 1-->
+
+        <!--Timer-->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+          "
+        >
+          <div id="timer" class="timer"></div>
+          <button onclick="pauseGame()" id="pauseBtn">
+            <div class="pause"></div>
+            <div class="pause"></div>
+          </button>
+        </div>
+
+        <!--Timer-->
+
+        <!--Player 2-->
+        <div class="player">
+          <div class="overlay">
+            <div class="border">
+              <div class="health"></div>
+              <div id="player2-health" class="default-health"></div>
+            </div>
+            <div class="player-info right">
+              <h2>Geda</h2>
+              <p>Samurai</p>
+            </div>
+          </div>
+          <div class="image-box enemy-avater"></div>
+        </div>
+        <!--Player 2-->
+      </div>
+
+      <div id="result" class="result">
+        <div class="result-banner">
+          <h2 class="winner"></h2>
+          <button onclick="restartGame()">Play Again</button>
+        </div>
+      </div>
+
+      <div id="pause-menu" class="result">
+        <div class="menu">
+          <h1>PAUSED</h1>
+
+          <ul>
+            <li role="button" onclick="continueGame()" id="play">Continue</li>
+            <li style="cursor: not-allowed; opacity: 0.5" id="controls">
+              View Controls
+            </li>
+            <li onclick="restartGame()">Restart Game</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="controls">
+
+      </div> -->
+      <canvas id="canvas"></canvas>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/utils.js"></script>
+    <script src="js/class.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
